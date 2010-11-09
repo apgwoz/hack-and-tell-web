@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>hack and tell</title>
+<script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <style type="text/css">
 body {
  font-size: 62.5%;
@@ -53,8 +54,17 @@ p a {
 <body>
 <div id="wrapper">
   <h1>hack and tell</h1>
-  <h2>show and tell for hackers.</h2>
+  <h2 id="tt">show and tell for hackers.</h2>
   <p>Currently, there's just one: <a href="http://meetup.com/hack-and-tell" title="New York City Hack and Tell">NYC Hack and Tell</a>
 </div>
+<script type="text/javascript">
+  (function($){
+    $.getJSON("http://itsthisforthat.com/api.php?json", function(tt) {
+      if(tt) {
+        $("#tt").html("so basically it's like a " + tt.this + " for " + tt.that);
+      }
+    });
+  })(jQuery);
+</script>
 </body>
 </html>
