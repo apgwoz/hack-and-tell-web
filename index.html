@@ -59,7 +59,7 @@ p a {
 </div>
 <script type="text/javascript">
   (function($){
-    $.getJSON("http://itsthisforthat.com/api.php?json", function(tt) {
+    $.getJSON("http://itsthisforthat.com/api.php?call=?", function(tt) {
       var template = "so basically it's like a {this} for {that}";
       $("#tt").html(template.replace("{this}", tt ? tt.this : "show and tell").replace("{that}", tt ? tt.that : "hackers"));
     });
